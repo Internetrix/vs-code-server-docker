@@ -1,5 +1,7 @@
-FROM codercom/code-server:3.11.1
+FROM codercom/code-server
 MAINTAINER Jonathon Su '<jonathon.su@internetrix.com.au>'
+
+USER root
 
 RUN curl https://deb.nodesource.com/setup_12.x | bash
 RUN curl https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
