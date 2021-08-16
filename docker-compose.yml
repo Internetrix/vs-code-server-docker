@@ -1,0 +1,16 @@
+version: "2.1"
+services:
+  code-server:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: codercom/code-server:3.11.1
+    user: "${UID}:${GID}"
+    container_name: code-server
+    volumes:
+      - $HOME/.config:/home/coder/.config
+      - $PWD:/home/coder/project
+    environment:
+      - DOCKER_USER=$USER
+    ports:
+      - 127.0.0.1:8080:8080
